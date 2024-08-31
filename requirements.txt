@@ -4,3 +4,4 @@ black
 wikipedia
 ipython
 click
+fire
