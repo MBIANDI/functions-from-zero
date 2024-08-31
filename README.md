@@ -2,12 +2,25 @@
 
 # To call Microservice
 Execute this:
-'''bash
+ ```bash
 curl -X 'POST' \
-  'https://noahgift-functions-from-zero-r7g59wcxx6x-8080.githubpreview.dev/wiki' \
+  'https://expert-trout-4jg65jrvrwvx2q4j7-8080.app.github.dev/docs' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
   "name": "Microsoft"
 }'
-'''
+ ```
+
+### Build container
+
+` docker build .`
+` docker image ls`
+
+### Run container
+
+` docker run -p 8080 93f7dffea261 `
+
+### Invoke
+
+run `invoke.sh`
