@@ -4,12 +4,14 @@ from fastapi.encoders import jsonable_encoder
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from mylib.bot import scrape
+from MlopsArchi.bot import scrape
 
 app = FastAPI()
 
+
 class Wiki(BaseModel):
     name: str
+
 
 @app.post("/wiki")
 async def scrape_story(wiki: Wiki):
@@ -18,9 +20,11 @@ async def scrape_story(wiki: Wiki):
     json_compatible_item_data = jsonable_encoder(payload)
     return JSONResponse(content=json_compatible_item_data)
 
+
 @app.get("/")
 async def root():
     return {"message": "Hello Functions"}
+
 
 @app.get("/add/{num1}/{num2}")
 async def add(num1: int, num2: int):
@@ -30,5 +34,5 @@ async def add(num1: int, num2: int):
     return {"total": total}
 
 
-if __name__ == '__main__':
-    uvicorn.run(app, port=8080, host='0.0.0.0')
+if __name__ == "__main__":
+    uvicorn.run(app, port=8080, host="0.0.0.0")

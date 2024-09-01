@@ -1,4 +1,4 @@
-from mylib.bot import scrape
+from MlopsArchi.bot import scrape
 from wikibot import cli
 from click.testing import CliRunner
 

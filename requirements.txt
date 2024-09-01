@@ -8,3 +8,4 @@ fire
 fastapi
 pydantic
 uvicorn[standard]
+poetry

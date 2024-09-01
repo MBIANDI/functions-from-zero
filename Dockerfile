@@ -1,11 +1,18 @@
-FROM public.ecr.aws/lambda/python:3.8
+FROM python:3.12-slim
+
+RUN pip install poetry
 
 RUN mkdir -p /app
+
 COPY ./main.py /app/
-COPY mylib/ /app/mylib/
-COPY ./requirements.txt /app/requirements.txt
-RUN pip3 install --no-cache-dir --upgrade -r /app/requirements.txt
+COPY MlopsArchi/ /app/MlopsArchi/
+COPY test/ /app/test/
+COPY pyproject.toml poetry.lock* /app/
+
 WORKDIR /app
-EXPOSE 8080
-CMD [ "main.py" ]
-ENTRYPOINT [ "python" ]
+
+ENV PATH="/app/.venv/bin:$PATH"
+
+RUN poetry install
+
+CMD ["poetry", "run", "python", "main.py"]

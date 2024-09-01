@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "MlopsArchi"
+version = "0.0"
+description = "This package is for the overview of MLOPS practices."
+authors = ["MBIA NDI Marie Thérèse"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pylint = "^3.2.7"
+pytest = "^8.3.2"
+black = "^24.8.0"
+wikipedia = "^1.4.0"
+ipython = "^8.27.0"
+click = "^8.1.7"
+fire = "^0.6.0"
+fastapi = "^0.112.2"
+pydantic = "^2.8.2"
+uvicorn = {extras = ["standard"], version = "^0.30.6"}
+poetry = "^1.8.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
